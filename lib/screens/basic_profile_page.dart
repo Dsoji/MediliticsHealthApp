@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medilitics/screens/professional_details1.dart';
+import 'package:medilitics/screens/onboardingPage.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
@@ -143,7 +143,7 @@ class _BasicProfileScreenState extends State<BasicProfileScreen> {
               ),
               RedButton(
                   text:'Complete onboarding', onPressed: () {
-                    Navigator.pushNamed(context, ProfessionalDetailsScreen1.id);
+                    Navigator.pushNamed(context, OnBoardingScreen.id);
               },color: const Color(0xFFFBD4D5), width: MediaQuery.of(context).size.width - 42,),
             ],
           ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medilitics/utilities/constants.dart';
 
 class TitleBar extends StatelessWidget {
-  const TitleBar({Key? key}) : super(key: key);
+  final String? text;
+  const TitleBar({this.text,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class TitleBar extends StatelessWidget {
                         200 / 2,
                   ),
                   Text(
-                    'Professional details',
+                    text!,
                     style: standardStyle.copyWith(
                         fontSize: 18, fontWeight: FontWeight.w700),
                   ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medilitics/screens/medilitics_title_page.dart';
+import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/screens/profession_details2.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
@@ -25,7 +25,7 @@ class _ProfessionalDetailsScreen1State
           padding: const EdgeInsets.only(bottom: 32),
           child: Column(
             children: [
-              const TitleBar(),
+              const TitleBar(text: 'Professional details',),
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.all(20.0),
@@ -34,6 +34,10 @@ class _ProfessionalDetailsScreen1State
                       height: 48,
                       hintText: 'Board/degree staus',
                       isSuffixIcon: true,
+                      icon: Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 20,
+                      ),
                     ),
                     const ReUsedFields(
                       height: 48,
@@ -44,6 +48,10 @@ class _ProfessionalDetailsScreen1State
                       height: 48,
                       hintText: 'Select specialty',
                       isSuffixIcon: true,
+                      icon: Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 20,
+                      ),
                     ),
                     const SizedBox(
                       height: 40,
@@ -65,6 +73,10 @@ class _ProfessionalDetailsScreen1State
                             height: 48,
                             hintText: 'Country',
                             isSuffixIcon: true,
+                      icon: Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 20,
+                      ),
                           ),
                     automaticAddress
                         ? const ReUsedFields(
@@ -79,12 +91,20 @@ class _ProfessionalDetailsScreen1State
                                 height: 48,
                                 hintText: 'State',
                                 isSuffixIcon: true,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+                                      size: 20,
+                                    ),
                               )),
                               Flexible(
                                   child: ReUsedFields(
                                     height: 48,
                                     hintText: 'Region',
                                     isSuffixIcon: true,
+                                    icon: Icon(
+                                      Icons.keyboard_arrow_down,
+                                      size: 20,
+                                    ),
                                   )),
                             ],
                           ),

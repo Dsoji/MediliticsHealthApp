@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medilitics/screens/medilitics_title_page.dart';
+import 'package:medilitics/screens/sign_up_page.dart';
+import 'package:medilitics/screens/welcome_page.dart';
+import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:medilitics/utilities/re_used_fields.dart';
@@ -17,7 +19,7 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
           children: [
             Column(
               children: [
-                const TitleBar(),
+                const TitleBar(text: 'Professional details',),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
@@ -29,7 +31,10 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      ReUsedFields(height: 48,hintText: 'Select hospital affiliation',isSuffixIcon: true,),
+                      ReUsedFields(height: 48,hintText: 'Select hospital affiliation',isSuffixIcon: true,icon: Icon(
+                        Icons.keyboard_arrow_down,
+                        size: 20,
+                      ),),
                     ],
                   ),
                 ),
@@ -48,7 +53,7 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
                   const SizedBox(width: 15,),
                   Flexible(
                     child: RedButton(text: 'Complete',color: const Color(0xFFFBD4D5),width: 160,onPressed: (){
-
+                      Navigator.pushNamed(context, WelcomeScreen.id);
                     },),
                   )
                 ],

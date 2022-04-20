@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medilitics/screens/basic_profile_page.dart';
+import 'package:medilitics/screens/login_page.dart';
+import 'package:medilitics/screens/new_password_screen.dart';
 import 'package:medilitics/screens/onboardingPage.dart';
 import 'package:medilitics/screens/profession_details2.dart';
 import 'package:medilitics/screens/professional_details1.dart';
+import 'package:medilitics/screens/reset_password_page.dart';
 import 'package:medilitics/screens/sign_up_page.dart';
 import 'package:medilitics/screens/view_page.dart';
 import 'package:medilitics/screens/welcome_page.dart';
@@ -32,6 +35,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
+        NewPasswordScreen.id:(context)=> const NewPasswordScreen(),
+        ResetPasswordScreen.id:(context)=> const ResetPasswordScreen(),
+        LoginScreen.id:(context)=> const LoginScreen(),
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         ViewScreen.id: (context) => const ViewScreen(),
         SignUpScreen.id:(context) => const SignUpScreen(),

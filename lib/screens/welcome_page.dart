@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medilitics/screens/login_page.dart';
 import 'package:medilitics/screens/view_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
@@ -94,7 +95,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             RedButton(text:'Get started',onPressed: () {
                               Navigator.pushNamed(context, ViewScreen.id);
                             }, color: myActiveColor,width: MediaQuery.of(context).size.width - 42,),
-                            WhiteButton(text: 'I already have an account',onPressed:  () {},width: MediaQuery.of(context).size.width - 42,),
+                            WhiteButton(text: 'I already have an account',onPressed:  () {
+                              Navigator.pushNamed(context, LoginScreen.id);
+                            },width: MediaQuery.of(context).size.width - 42,),
                           ],
                         ),
                       )

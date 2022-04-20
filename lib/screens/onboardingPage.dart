@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medilitics/screens/basic_profile_page.dart';
+import 'package:medilitics/screens/professional_details1.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 
@@ -45,8 +46,13 @@ class OnBoardingScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  const ReUsedCards(
-                      'Professional details', 'Add details to verify'),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pushNamed(context, ProfessionalDetailsScreen1.id);
+                    },
+                    child: const ReUsedCards(
+                        'Professional details', 'Add details to verify'),
+                  ),
                 ],
               ),
             ),
