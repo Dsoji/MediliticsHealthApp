@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 class WhiteButton extends StatelessWidget {
-  final String text;
-  final void Function() onPressed;
-  const WhiteButton(this.text,this.onPressed,{Key? key}) : super(key: key);
+  final String? text;
+  final double? width;
+  final void Function()? onPressed;
+  const WhiteButton({this.text,this.onPressed,this.width,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: onPressed,
+      onPressed: onPressed!,
       height: 50,
       child:Text(
-        text,
+        text!,
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w600,
@@ -19,7 +20,7 @@ class WhiteButton extends StatelessWidget {
           color: Color(0xFF0B7CB9),
         ),
       ),
-      minWidth: MediaQuery.of(context).size.width - 42,
+      minWidth: width!,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50.0),
           side: const BorderSide(
@@ -30,19 +31,22 @@ class WhiteButton extends StatelessWidget {
   }
 }
 class RedButton extends StatelessWidget {
-  final String text;
-  final Color color;
-  final void Function() onPressed;
-  const RedButton(this.text,this.onPressed,this.color,{Key? key}) : super(key: key);
+  final String? text;
+  final Color? color;
+  final double? width;
+  final void Function()? onPressed;
+
+  const RedButton({Key? key,this.width,this.color,this.text,this.onPressed}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return  MaterialButton(
-      onPressed: onPressed,
-      minWidth: MediaQuery.of(context).size.width - 42,
+      onPressed: onPressed!,
+      minWidth: width!,
       color: color,
       child: Text(
-        text,
+        text!,
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w600,

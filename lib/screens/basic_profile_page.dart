@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:medilitics/screens/professional_details1.dart';
 import 'package:medilitics/utilities/constants.dart';
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
+import 'package:medilitics/utilities/re_used_fields.dart';
 
 class BasicProfileScreen extends StatefulWidget {
   static String id = '/BasicProfileScreen';
@@ -81,41 +81,13 @@ class _BasicProfileScreenState extends State<BasicProfileScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: const [
                               Flexible(
-                                child: Card(
-                                  child: SizedBox(
-                                    height: 50,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: 'First name',
-                                        border: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFF3F1F1),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                child: ReUsedFields(height: 50,hintText: 'First name',isSuffixIcon: false,)
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Flexible(
-                                child: Card(
-                                  child: SizedBox(
-                                    height: 50,
-                                    child: TextField(
-                                      decoration: InputDecoration(
-                                        hintText: 'Last name',
-                                        border: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: Color(0xFFF3F1F1),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                                child: ReUsedFields(height: 50,hintText: 'Last name',isSuffixIcon: false,),
                               ),
                             ],
                           ),
@@ -170,9 +142,9 @@ class _BasicProfileScreenState extends State<BasicProfileScreen> {
                 ),
               ),
               RedButton(
-                  'Complete onboarding', () {
+                  text:'Complete onboarding', onPressed: () {
                     Navigator.pushNamed(context, ProfessionalDetailsScreen1.id);
-              }, const Color(0xFFFBD4D5)),
+              },color: const Color(0xFFFBD4D5), width: MediaQuery.of(context).size.width - 42,),
             ],
           ),
         ),

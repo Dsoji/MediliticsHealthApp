@@ -55,11 +55,11 @@ class OnBoardingScreen extends StatelessWidget {
               child: Column(
                 children: [
                   RedButton(
-                      'Complete onboarding', () {}, const Color(0xFFFBD4D5)),
+                      text:'Complete onboarding', onPressed: () {},color: const Color(0xFFFBD4D5),width: MediaQuery.of(context).size.width - 42,),
                   const SizedBox(
                     height: 16,
                   ),
-                  WhiteButton('Log out', () {}),
+                  WhiteButton(text: 'Log out', onPressed: () {},width: MediaQuery.of(context).size.width - 42,),
                   const SizedBox(
                     height: 32,
                   )

@@ -91,10 +91,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            RedButton('Get started', () {
+                            RedButton(text:'Get started',onPressed: () {
                               Navigator.pushNamed(context, ViewScreen.id);
-                            }, myActiveColor),
-                            WhiteButton('I already have an account', () {}),
+                            }, color: myActiveColor,width: MediaQuery.of(context).size.width - 42,),
+                            WhiteButton(text: 'I already have an account',onPressed:  () {},width: MediaQuery.of(context).size.width - 42,),
                           ],
                         ),
                       )

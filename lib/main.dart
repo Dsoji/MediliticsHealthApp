@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medilitics/screens/basic_profile_page.dart';
 import 'package:medilitics/screens/onboardingPage.dart';
+import 'package:medilitics/screens/profession_details2.dart';
 import 'package:medilitics/screens/professional_details1.dart';
 import 'package:medilitics/screens/sign_up_page.dart';
 import 'package:medilitics/screens/view_page.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         OnBoardingScreen.id:(context)=> const OnBoardingScreen(),
         BasicProfileScreen.id:(context)=> const BasicProfileScreen(),
         ProfessionalDetailsScreen1.id:(context)=> const ProfessionalDetailsScreen1(),
+        ProfessionalDetailsScreen2.id:(context)=> const ProfessionalDetailsScreen2(),
       },
       initialRoute: WelcomeScreen.id,
     );
