@@ -3,6 +3,7 @@ import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:medilitics/utilities/re_used_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NewPasswordScreen extends StatefulWidget {
   static String id = '/NewPasswordScreen';
@@ -19,31 +20,33 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.only(bottom: 32),
+          padding: EdgeInsets.only(bottom: 32.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 children: [
-                  const TitleBar(
+                  TitleBar(
                     text: 'Create new password',
+                    addDivider: false,
+                    width:190.w,
                   ),
-                  const SizedBox(height: 24,),
+                  SizedBox(height: 24.h,),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Column(
                       children: [
-                        const Text(
+                        Text(
                           'We just sent you a reset code. Enter it below and set a new password for your account.',
-                          style: standardStyle,
+                          style: standardStyle.copyWith(fontSize: 16.sp),
                         ),
-                        const SizedBox(height: 24,),
+                        SizedBox(height: 24.h,),
                         ReUsedFields(onChanged: (value){
 
-                        },height: 48,isSuffixIcon: false,hintText: 'Reset code',),
+                        },height: 48.h,isSuffixIcon: false,hintText: 'Reset code',),
                         ReUsedFields(
                           hintText: 'New password',
-                          height: 48,
+                          height: 48.h,
                           isSuffixIcon: true,
                           icon: InkWell(
                             onTap: () {
@@ -56,8 +59,8 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                           ),
 
                         ),
-                        const SizedBox(height: 16,),
-                        Text('8 characters min, a number and special character.',style: standardStyle.copyWith(fontSize: 14,color: const Color(0xFF919197)),)
+                        SizedBox(height: 16.h,),
+                        Text('8 characters min, a number and special character.',style: standardStyle.copyWith(fontSize: 14.sp,color: const Color(0xFF919197)),)
                       ],
                     ),
                   ),
@@ -65,7 +68,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               ),
               RedButton(text: 'Create new password',color: myActiveColor,onPressed: (){
 
-              },width: MediaQuery.of(context).size.width-40,)
+              },width: 335.w,)
             ],
           ),
         ),

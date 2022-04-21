@@ -4,6 +4,7 @@ import 'package:medilitics/screens/profession_details2.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:medilitics/utilities/re_used_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfessionalDetailsScreen1 extends StatefulWidget {
   static String id = '/ProfessionalDetailsScreen1';
@@ -25,90 +26,98 @@ class _ProfessionalDetailsScreen1State
           padding: const EdgeInsets.only(bottom: 32),
           child: Column(
             children: [
-              const TitleBar(text: 'Professional details',),
+              TitleBar(text: 'Professional details',addDivider: true,divider: SizedBox(
+                width: 187.5.w,
+                child: Divider(
+                  height: 3.h,
+                  color: const Color(0xFF0B7CB9),
+                  thickness: 3.h,
+                  //thickness: ,
+                ),
+              ),width:171.w,),
               Expanded(
                 child: ListView(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
                   children: [
-                    const ReUsedFields(
-                      height: 48,
+                    ReUsedFields(
+                      height: 48.h,
                       hintText: 'Board/degree staus',
                       isSuffixIcon: true,
                       icon: Icon(
                         Icons.keyboard_arrow_down,
-                        size: 20,
+                        size: 20.sp,
                       ),
                     ),
-                    const ReUsedFields(
-                      height: 48,
+                    ReUsedFields(
+                      height: 48.h,
                       hintText: 'MDCN number',
                       isSuffixIcon: false,
                     ),
-                    const ReUsedFields(
-                      height: 48,
+                    ReUsedFields(
+                      height: 48.h,
                       hintText: 'Select specialty',
                       isSuffixIcon: true,
                       icon: Icon(
                         Icons.keyboard_arrow_down,
-                        size: 20,
+                        size: 20.sp,
                       ),
                     ),
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: 40.h,
                     ),
                     Text(
                       'Enter your address below. We’ll only use this to recommend you to nearby patients.',
-                      style: standardStyle.copyWith(fontSize: 16),
+                      style: standardStyle.copyWith(fontSize: 16.sp),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: 20.h,
                     ),
                     automaticAddress
-                        ? const ReUsedFields(
-                            height: 48,
+                        ? ReUsedFields(
+                            height: 48.h,
                             hintText: 'Start typing to select address...',
                             isSuffixIcon: false,
                           )
-                        : const ReUsedFields(
-                            height: 48,
+                        : ReUsedFields(
+                            height: 48.h,
                             hintText: 'Country',
                             isSuffixIcon: true,
                       icon: Icon(
                         Icons.keyboard_arrow_down,
-                        size: 20,
+                        size: 20.sp,
                       ),
                           ),
                     automaticAddress
-                        ? const ReUsedFields(
+                        ? ReUsedFields(
                             hintText: 'Additional address details (optional)',
-                            height: 48,
+                            height: 48.h,
                             isSuffixIcon: false,
                           )
                         : Row(
-                            children: const [
+                            children: [
                               Flexible(
                                   child: ReUsedFields(
-                                height: 48,
+                                height: 48.h,
                                 hintText: 'State',
                                 isSuffixIcon: true,
                                     icon: Icon(
                                       Icons.keyboard_arrow_down,
-                                      size: 20,
+                                      size: 20.sp,
                                     ),
                               )),
                               Flexible(
                                   child: ReUsedFields(
-                                    height: 48,
+                                    height: 48.h,
                                     hintText: 'Region',
                                     isSuffixIcon: true,
                                     icon: Icon(
                                       Icons.keyboard_arrow_down,
-                                      size: 20,
+                                      size: 20.sp,
                                     ),
                                   )),
                             ],
                           ),
-                    automaticAddress==false?const ReUsedFields(hintText: 'Enter street address (optional)',height: 48,isSuffixIcon: false,):const SizedBox(),
+                    automaticAddress==false?ReUsedFields(hintText: 'Enter street address (optional)',height: 48.h,isSuffixIcon: false,):const SizedBox(),
                     const SizedBox(
                       height: 16,
                     ),
@@ -128,7 +137,7 @@ class _ProfessionalDetailsScreen1State
               ),
               RedButton(text:'Next',onPressed: () {
                 Navigator.pushNamed(context, ProfessionalDetailsScreen2.id);
-              }, color: automaticAddress?const Color(0xFFFBD4D5):myActiveColor,width: MediaQuery.of(context).size.width - 42,)
+              }, color: automaticAddress?const Color(0xFFFBD4D5):myActiveColor,width: 335.w,)
             ],
           ),
         ),

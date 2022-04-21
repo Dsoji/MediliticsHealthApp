@@ -4,6 +4,7 @@ import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:medilitics/utilities/re_used_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = '/LoginScreen';
@@ -29,18 +30,20 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Column(
                 children: [
-                  const TitleBar(
+                  TitleBar(
                     text: 'Welcome back',
+                    addDivider: false,
+                    width:128.w,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                        top: 24, left: 20, right: 20),
+                    padding: EdgeInsets.only(
+                        top: 24.h, left: 20.w, right: 20.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         ReUsedFields(
                           hintText: 'Email address',
-                          height: 48,
+                          height: 48.h,
                           isSuffixIcon: false,
                           onChanged: (value) {
                            setState(() {
@@ -50,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         ReUsedFields(
                           hintText: 'Password',
-                          height: 48,
+                          height: 48.h,
                           isSuffixIcon: true,
                           icon: InkWell(
                             onTap: () {

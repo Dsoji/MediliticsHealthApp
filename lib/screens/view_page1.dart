@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ViewPage extends StatefulWidget {
   final String image;
@@ -18,7 +19,7 @@ class _ViewPageState extends State<ViewPage> {
     return Column(
       children: [
         SizedBox(
-          height: 340,
+          height: 340.h,
           width: MediaQuery.of(context).size.width,
           child: Center(
             child: Column(
@@ -31,28 +32,29 @@ class _ViewPageState extends State<ViewPage> {
             ),
           ),
         ),
-        const SizedBox(height: 24,),
+        SizedBox(height: 24.h,),
         Column(
           children: [
             Text(
               widget.headingText,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 24,
+              style: TextStyle(
+                fontSize: 24.sp,
                 fontWeight: FontWeight.w700,
-                fontFamily: 'Messina Sans',
-                color: Color(0xFF222525),
+                color: const Color(0xFF222525),
               ),
             ),
             const SizedBox(height: 8,),
-            Text(
-              widget.labelingText,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                fontFamily: 'Messina Sans',
-                color: Color(0xFF525257),
+            SizedBox(
+              width: 280.w,
+              child: Text(
+                widget.labelingText,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w400,
+                  color: const Color(0xFF525257),
+                ),
               ),
             ),
           ],

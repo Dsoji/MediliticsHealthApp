@@ -1,5 +1,4 @@
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/screens/sign_up_page.dart';
@@ -50,8 +49,7 @@ class _ViewScreenState extends State<ViewScreen> {
                       ],
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).size.height -
-                          MediaQuery.of(context).size.height / 2.9,
+                      top: 481.h,
                       child: SmoothPageIndicator(
                         controller: _pageController, // PageController
                         count: 3,
@@ -96,10 +94,9 @@ class _ViewScreenState extends State<ViewScreen> {
                     },
                     child: Text(
                       _index==2? 'Sign up':'Next',
-                      style: const TextStyle(
-                          fontSize: 16,
+                      style: TextStyle(
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
-                          fontFamily: 'Messina Sans',
                           color: Colors.white
                       ),
                     ),

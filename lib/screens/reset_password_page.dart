@@ -4,6 +4,7 @@ import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:medilitics/utilities/re_used_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   static String id = '/ResetPasswordScreen';
@@ -20,28 +21,30 @@ class ResetPasswordScreen extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const TitleBar(
+                  TitleBar(
                     text: 'Reset password',
+                    addDivider: false,
+                    width:140.w,
                   ),
-                  const SizedBox(height: 24,),
+                  SizedBox(height: 24.h,),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20.w),
                     child: Column(
                       children: [
                         Text(
                           'Enter the email address associated with your account to get a password reset code.',
-                          style: standardStyle.copyWith(fontSize: 16),
+                          style: standardStyle.copyWith(fontSize: 16.sp),
                         ),
-                        const SizedBox(height: 24,),
+                        SizedBox(height: 24.h,),
                         ReUsedFields(onChanged: (value){
 
-                        },height: 48,isSuffixIcon: false,hintText: 'Email address',)
+                        },height: 48.h,isSuffixIcon: false,hintText: 'Email address',)
                       ],
                     ),
                   )
                 ],
               ),
-              RedButton(text: 'Get reset code',color: myActiveColor,width: MediaQuery.of(context).size.width-40,onPressed: (){
+              RedButton(text: 'Get reset code',color: myActiveColor,width: 335.w,onPressed: (){
                 Navigator.pushNamed(context, NewPasswordScreen.id);
               },)
             ],

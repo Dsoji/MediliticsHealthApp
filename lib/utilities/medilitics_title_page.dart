@@ -1,19 +1,27 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:medilitics/utilities/constants.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TitleBar extends StatelessWidget {
   final String? text;
-  const TitleBar({this.text,Key? key}) : super(key: key);
+  final bool? addDivider;
+  final Widget? divider;
+  final double? width;
+  final double? height;
+  const TitleBar({this.text,this.height,this.width,this.divider,this.addDivider,Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 56.h,
+      width: MediaQuery.of(context).size.width,
       child: Card(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 15, left: 20),
+              padding: EdgeInsets.only(top: 15.h, left: 20.w),
               child: Row(
                 children: [
                   const Icon(
@@ -22,25 +30,20 @@ class TitleBar extends StatelessWidget {
                     size: 18,
                   ),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width / 2 -
-                        200 / 2,
+                    width: (MediaQuery.of(context).size.width -
+                        width!)/2-20.w,
                   ),
                   Text(
                     text!,
+                    textAlign: TextAlign.center,
                     style: standardStyle.copyWith(
                         fontSize: 18, fontWeight: FontWeight.w700),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 12),
-            const Divider(
-              height: 4,
-              color: Color(0xFF0B7CB9),
-              thickness: 4,
-              endIndent: 187.5,
-              //thickness: ,
-            )
+            SizedBox(height: 12.38.h),
+            addDivider!?divider!:const SizedBox(),
           ],
         ),
       ),

@@ -29,6 +29,9 @@ environment:
 dependencies:
   country_code_picker: ^2.0.2
   intl_phone_number_input: ^0.7.0+2
+  flutter_screenutil: ^5.4.0+1
+  google_fonts: ^2.3.1
+  day_picker: ^2.1.1
   flutter:
     sdk: flutter
 

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/screens/onboardingPage.dart';
+import 'package:medilitics/utilities/medilitics_title_page.dart';
+import 'package:medilitics/utilities/re_used_buttons.dart';
+import 'package:medilitics/utilities/re_used_fields.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignUpScreen extends StatefulWidget {
   static String id = '/SignUpScreen';
@@ -16,88 +20,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return SafeArea(
         child: Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            Expanded(
-              child: ListView(
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: 56,
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.arrow_back_ios,
-                          color: greyBlackColor,
-                          size: 18,
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width / 2 - 70,
-                        ),
-                        const SizedBox(
-                          child: Text(
-                            'Sign up',
-                            style: TextStyle(
-                              color: greyBlackColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          width: 67,
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const SizedBox(
-                    height: 48,
-                    width: 100,
-                    child: Card(
-                      child: TextField(
-                        decoration: InputDecoration(
-                            labelText: 'Email address',
-                            labelStyle: TextStyle(
-                              color: Color(0xFF919197),
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                            ),
-                            border: OutlineInputBorder(
-                                borderSide: BorderSide(
-                              color: Color(0xFFF3F1F1),
-                            ))),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.pushNamed(context, OnBoardingScreen.id);
-              },
-              minWidth: MediaQuery.of(context).size.width,
-              color: myActiveColor,
-              height: 50,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(50)),
-              child: const Text(
-                'Sign up',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                  color: Colors.white,
+      body: Column(
+        children: [
+          TitleBar(addDivider: false,text: 'Sign up',width: 67.w,height: 56.h,),
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              children: [
+                SizedBox(
+                  height: 24.h,
                 ),
-              ),
+                SizedBox(
+                  height: 48.h,
+                  child: ReUsedFields(isSuffixIcon: false,height: 48,hintText: 'Email address',onChanged: (value){
+
+                  },),
+                ),
+              ],
             ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 7.56,
-            )
-          ],
-        ),
+          ),
+
+          RedButton(width: 335.w,color: myActiveColor,text: 'Sign up',onPressed: (){
+            Navigator.pushNamed(context, OnBoardingScreen.id);
+          },),
+
+          SizedBox(
+            height: 88.h,
+          )
+        ],
       ),
     ));
   }

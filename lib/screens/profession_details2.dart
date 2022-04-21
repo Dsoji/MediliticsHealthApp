@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medilitics/screens/sign_up_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medilitics/screens/verified_page.dart';
 import 'package:medilitics/screens/welcome_page.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/constants.dart';
@@ -19,21 +20,26 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
           children: [
             Column(
               children: [
-                const TitleBar(text: 'Professional details',),
+                TitleBar(text: 'Professional details',addDivider: true,divider: Divider(
+                  height: 3.h,
+                  color: const Color(0xFF0B7CB9),
+                  thickness: 3.h,
+                  //thickness: ,
+                ),width:171.w,),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.symmetric(vertical: 20.0.w,horizontal: 20.0.h),
                   child: Column(
-                    children: const [
+                    children: [
                       Text(
                         'Please enter the hospital(s) you’re affiliated with below.',
-                        style: standardStyle,
+                        style: standardStyle.copyWith(fontSize: 16.sp),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
-                      ReUsedFields(height: 48,hintText: 'Select hospital affiliation',isSuffixIcon: true,icon: Icon(
+                      ReUsedFields(height: 48.h,hintText: 'Select hospital affiliation',isSuffixIcon: true,icon: Icon(
                         Icons.keyboard_arrow_down,
-                        size: 20,
+                        size: 20.sp,
                       ),),
                     ],
                   ),
@@ -42,7 +48,7 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 32,right: 20,left: 20),
+              padding: EdgeInsets.only(bottom: 32.h,right: 20.w,left: 20.w),
               child: Row(
                 children: [
                   Flexible( 
@@ -50,10 +56,10 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
 
                     },),
                   ),
-                  const SizedBox(width: 15,),
+                  SizedBox(width: 15.w,),
                   Flexible(
-                    child: RedButton(text: 'Complete',color: const Color(0xFFFBD4D5),width: 160,onPressed: (){
-                      Navigator.pushNamed(context, WelcomeScreen.id);
+                    child: RedButton(text: 'Complete',color: const Color(0xFFFBD4D5),width: 160.w,onPressed: (){
+                      Navigator.pushNamed(context, VerifiedScreen.id);
                     },),
                   )
                 ],

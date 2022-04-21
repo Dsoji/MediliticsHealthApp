@@ -3,6 +3,8 @@ import 'package:medilitics/screens/login_page.dart';
 import 'package:medilitics/screens/view_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -23,86 +25,87 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return SafeArea(
       child: Scaffold(
         body: Stack(
+          clipBehavior: Clip.none,
           children: [
             Image.asset(
               'images/image1.jpg',
             ),
             Positioned(
-              top: MediaQuery.of(context).size.height / 2.9,
+              top: 250.h,
               child: Padding(
-                padding: const EdgeInsets.all(21.0),
-                child: SizedBox(
-                  height: MediaQuery.of(context).size.height -
-                      MediaQuery.of(context).size.height / 2.9,
-                  child: Column(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 192,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset(
-                                  'images/medilitics_logoX.png',
-                                  width: 40,
-                                  height: 39,
-                                ),
-                                const Text(
-                                  'MEDILITICS',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: 'Gotham',
-                                    color: myActiveColor,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              child: const Text(
-                                'Unlock better health outcomes for patients.',
+                padding: EdgeInsets.only(left: 20.0.w,right: 20.0.w),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 364.h,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'images/medilitics_logoX.png',
+                                width: 40.w,
+                                height: 39.h,
+                              ),
+                              Text(
+                                'MEDILITICS',
                                 style: TextStyle(
-                                  fontSize: 28,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w700,
-                                  fontFamily: 'Messina Sans',
-                                  color: greyBlackColor,
+                                  color: myActiveColor,
                                 ),
                               ),
-                              width: MediaQuery.of(context).size.width,
+                            ],
+                          ),
+                          SizedBox(height: 5.h,),
+                          SizedBox(
+                            child: Text(
+                              'Unlock better health outcomes for patients.',
+                              style: TextStyle(
+                              fontSize: 28.sp,
+                              fontWeight: FontWeight.w700,
+                              color: greyBlackColor,
                             ),
-                            SizedBox(
-                              child: const Text(
-                                'Get the tools and insights you need to manage your diabetes and hypertension patients so they can live a healthy life.',
-                                style: standardStyle,
-                              ),
-                              width: MediaQuery.of(context).size.width - 42,
                             ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height / 27,
-                      ),
-                      SizedBox(
-                        height: 120,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            RedButton(text:'Get started',onPressed: () {
+                            width: 335.w,
+                          ),
+                          SizedBox(height: 8.h,),
+                          SizedBox(
+                            child: Text(
+                              'Get the tools and insights you need to manage your diabetes and hypertension patients so they can live a healthy life.',
+                              style: standardStyle.copyWith(fontSize: 16.sp),
+                            ),
+                            width: 335.w,
+                          ),
+                          SizedBox(
+                            height: 24.h,
+                          ),
+                          RedButton(
+                            text: 'Get started',
+                            onPressed: () {
                               Navigator.pushNamed(context, ViewScreen.id);
-                            }, color: myActiveColor,width: MediaQuery.of(context).size.width - 42,),
-                            WhiteButton(text: 'I already have an account',onPressed:  () {
+                            },
+                            color: myActiveColor,
+                            width: 335.w,
+                          ),
+                          SizedBox(
+                            height: 16.h,
+                          ),
+                          WhiteButton(
+                            text: 'I already have an account',
+                            onPressed: () {
                               Navigator.pushNamed(context, LoginScreen.id);
-                            },width: MediaQuery.of(context).size.width - 42,),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                            },
+                            width: 335.w,
+                          )
+                        ],
+                      ),
+                    ),
+
+                  ],
                 ),
               ),
             )
