@@ -32,6 +32,7 @@ dependencies:
   flutter_screenutil: ^5.4.0+1
   google_fonts: ^2.3.1
   day_picker: ^2.1.1
+  syncfusion_flutter_charts: ^20.1.50
   flutter:
     sdk: flutter
 

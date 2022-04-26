@@ -26,7 +26,9 @@ class _ProfessionalDetailsScreen1State
           padding: const EdgeInsets.only(bottom: 32),
           child: Column(
             children: [
-              TitleBar(text: 'Professional details',addDivider: true,divider: SizedBox(
+              TitleBar(text: 'Professional details',onTap: (){
+                Navigator.pop(context);
+              },addDivider: true,divider: SizedBox(
                 width: 187.5.w,
                 child: Divider(
                   height: 3.h,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medilitics/screens/verified_page.dart';
-import 'package:medilitics/screens/welcome_page.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
@@ -20,7 +19,9 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
           children: [
             Column(
               children: [
-                TitleBar(text: 'Professional details',addDivider: true,divider: Divider(
+                TitleBar(text: 'Professional details',onTap: (){
+                  Navigator.pop(context);
+                },addDivider: true,divider: Divider(
                   height: 3.h,
                   color: const Color(0xFF0B7CB9),
                   thickness: 3.h,

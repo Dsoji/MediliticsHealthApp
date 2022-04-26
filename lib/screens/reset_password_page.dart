@@ -25,6 +25,9 @@ class ResetPasswordScreen extends StatelessWidget {
                     text: 'Reset password',
                     addDivider: false,
                     width:140.w,
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
                   ),
                   SizedBox(height: 24.h,),
                   Padding(

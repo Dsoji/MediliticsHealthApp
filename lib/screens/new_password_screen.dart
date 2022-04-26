@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medilitics/screens/login_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
@@ -30,6 +31,9 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                     text: 'Create new password',
                     addDivider: false,
                     width:190.w,
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
                   ),
                   SizedBox(height: 24.h,),
                   Padding(
@@ -67,7 +71,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 ],
               ),
               RedButton(text: 'Create new password',color: myActiveColor,onPressed: (){
-
+                Navigator.pushNamed(context, LoginScreen.id);
               },width: 335.w,)
             ],
           ),

@@ -34,6 +34,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: 'Welcome back',
                     addDivider: false,
                     width:128.w,
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
                   ),
                   Padding(
                     padding: EdgeInsets.only(

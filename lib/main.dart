@@ -5,6 +5,7 @@ import 'package:medilitics/screens/new_password_screen.dart';
 import 'package:medilitics/screens/onboardingPage.dart';
 import 'package:medilitics/screens/profession_details2.dart';
 import 'package:medilitics/screens/professional_details1.dart';
+import 'package:medilitics/screens/report_page.dart';
 import 'package:medilitics/screens/reset_password_page.dart';
 import 'package:medilitics/screens/schedule_screen.dart';
 import 'package:medilitics/screens/sign_up_page.dart';
@@ -50,8 +51,9 @@ class MyApp extends StatelessWidget {
           ProfessionalDetailsScreen2.id:(context)=> const ProfessionalDetailsScreen2(),
           ScheduleScreen.id:(context)=> const ScheduleScreen(),
           VerifiedScreen.id:(context)=> const VerifiedScreen(),
+          ReportScreen.id:(context)=> const ReportScreen(),
         },
-        initialRoute: WelcomeScreen.id,
+        initialRoute: WelcomeScreen.id,//ReportScreen.id,
       ),
       designSize: const Size(375, 667),
     );

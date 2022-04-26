@@ -22,7 +22,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          TitleBar(addDivider: false,text: 'Sign up',width: 67.w,height: 56.h,),
+          TitleBar(addDivider: false,text: 'Sign up',width: 67.w,height: 56.h,onTap: (){
+            Navigator.pop(context);
+          },),
           Expanded(
             child: ListView(
               padding: EdgeInsets.symmetric(horizontal: 20.w),

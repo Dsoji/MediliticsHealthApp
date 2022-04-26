@@ -15,6 +15,11 @@ class ViewScreen extends StatefulWidget {
 
 class _ViewScreenState extends State<ViewScreen> {
   final PageController _pageController = PageController();
+  List<ViewPage> viewPage = const [
+    ViewPage('images/image2.png','Get powerful tools and data to help patients manage their condition','Manage Patients',),
+    ViewPage('images/image3.png', 'Gain access to AI-driven reports on patients health conditions.', 'Access research data'),
+    ViewPage('images/image4.png', 'See whether patients are following through with their care plan and intervene in emergencies.', 'Monitor and help'),
+  ];
   int _index = 0;
   @override
   Widget build(BuildContext context) {
@@ -26,10 +31,15 @@ class _ViewScreenState extends State<ViewScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                Icons.clear,
-                color: Color(0xFF222525),
-                size: 15.54,
+              InkWell(
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.clear,
+                  color: Color(0xFF222525),
+                  size: 15.54,
+                ),
               ),
               Flexible(
                 child: Stack(
@@ -42,11 +52,7 @@ class _ViewScreenState extends State<ViewScreen> {
                         });
                       },
                       controller: _pageController,
-                      children: const [
-                        ViewPage('images/image2.png','Get powerful tools and data to help patients manage their condition','Manage Patients',),
-                        ViewPage('images/image3.png', 'Gain access to AI-driven reports on patients health conditions.', 'Access research data'),
-                        ViewPage('images/image4.png', 'See whether patients are following through with their care plan and intervene in emergencies.', 'Monitor and help'),
-                      ],
+                      children: viewPage,
                     ),
                     Positioned(
                       top: 481.h,
@@ -59,7 +65,9 @@ class _ViewScreenState extends State<ViewScreen> {
                           activeDotColor: myActiveColor,
                           dotColor: Color(0xFFC4C4C4),
                         ), // your preferred effect
-                        onDotClicked: (index) {},
+                        onDotClicked: (index) {
+                          _pageController.jumpToPage(index);
+                        },
                       ),
                     ),
                   ],
@@ -69,7 +77,16 @@ class _ViewScreenState extends State<ViewScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      switch (_index) {
+                        case 0:
+                          Navigator.pushNamed(context, SignUpScreen.id);
+                          break;
+                        default:
+                          _pageController.jumpToPage(_index-1);
+                          break;
+                      }
+                    },
                     child: Text(
                       _index==0?'Skip':'Previous' ,
                       style: const TextStyle(
@@ -88,8 +105,13 @@ class _ViewScreenState extends State<ViewScreen> {
                       borderRadius: BorderRadius.circular(50)
                     ),
                     onPressed: () {
-                      if(_index==2){
-                        Navigator.pushNamed(context, SignUpScreen.id);
+                      switch (_index) {
+                        case 2:
+                          Navigator.pushNamed(context, SignUpScreen.id);
+                          break;
+                        default:
+                          _pageController.jumpToPage(_index+1);
+                          break;
                       }
                     },
                     child: Text(
