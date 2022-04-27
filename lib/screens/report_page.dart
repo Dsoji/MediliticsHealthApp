@@ -53,6 +53,7 @@ class _ReportScreenState extends State<ReportScreen> {
     //   )
     // ];
     return Scaffold(
+      backgroundColor: const Color(0xFFF3F1F1),
       body: SafeArea(
         child: Column(
           children: [
@@ -65,7 +66,7 @@ class _ReportScreenState extends State<ReportScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children:[
-                      Text('Reports',style: standardStyle.copyWith(fontSize: 18.w),),
+                      Text('Reports',style: standardStyle.copyWith(fontSize: 18.w,fontWeight: FontWeight.w700),),
                       const Icon(
                         Icons.notifications_none,
                         color: greyBlackColor,
@@ -75,33 +76,97 @@ class _ReportScreenState extends State<ReportScreen> {
                 ),
               ),
             ),
-            Container(
-                child: SfCartesianChart(
-                    series: <ChartSeries>[
-                      // Renders scatter chart
-                      ScatterSeries<ChartData, String>(
-                          dataSource: data,
-                          xValueMapper: (ChartData data, _) => data.xAxis,
-                          yValueMapper: (ChartData data, _) => data.yAxis,
-                          markerSettings: const MarkerSettings(
-                              isVisible: true,
-                              shape: DataMarkerType.image,
-                              // Renders the image as marker
-                              image: AssetImage('images/profileIcon.png'),
-                            //color: Colors.green,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w,vertical: 20.h),
+              child: Card(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          SizedBox(width: 16.w,),
+                          Text('Patient progress',style: standardStyle.copyWith(fontSize: 14.sp),),
+                          SizedBox(width: 113.w,),
+                          Row(
+                            children: [
+                              Text('Diabetes',style: standardStyle.copyWith(color: const Color(0xFF0B7CB9),fontSize: 14.sp),),
+                              Icon(Icons.keyboard_arrow_down,size: 20.sp,color: const Color(0xFF0B7CB9))
+                            ],
+                          ),
+                        ],
+                      ),
+                      const Divider(),
+                      Row(
+                        children: [
+                          SizedBox(width: 16.w,),
+                          Row(
+                            children: [
+                              Text('All patients',style: standardStyle.copyWith(fontSize: 14.sp,color: const Color(0xFF919197)),),
+                              Icon(Icons.keyboard_arrow_down,size: 20.sp,color: const Color(0xFF919197))
+                            ],
+                          ),
+                          SizedBox(width: 139.w,),
+                          Row(
+                            children: [
+                              Text('To date',style: standardStyle.copyWith(fontSize: 14.sp,color: const Color(0xFF919197)),),
+                              Icon(Icons.keyboard_arrow_down,size: 20.sp,color: const Color(0xFF919197))
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 23.h,),
+                      SfCartesianChart(
+                          series: <ChartSeries>[
+                            // Renders scatter chart
+                            ScatterSeries<ChartData, String>(
+                                dataSource: data,
+                                xValueMapper: (ChartData data, _) => data.xAxis,
+                                yValueMapper: (ChartData data, _) => data.yAxis,
+                                markerSettings: const MarkerSettings(
+                                    isVisible: true,
+                                    shape: DataMarkerType.image,
+                                    // Renders the image as marker
+                                    image: AssetImage('images/profileIcon.png'),
+                                  //color: Colors.green,
+                                )
+                            ),
+                          ],
+
+                        primaryYAxis: NumericAxis(
+                          minimum: 0,
+                          maximum: 300,
+                          title: AxisTitle(
+                            text: 'Blood sugar',
+                            textStyle: TextStyle(
+                                fontSize: 8.sp,
+                                color: const Color(0xFF525257),
+                                fontWeight: FontWeight.w600
+                            )
                           )
+                        ),
+                        primaryXAxis: CategoryAxis(
+                            labelPlacement: LabelPlacement.betweenTicks,
+                          labelsExtent: 46,
+                          labelStyle: TextStyle(
+                            fontSize: 14.sp,
+                            color: greyBlackColor,
+                          ),
+                          title: AxisTitle(
+                            text: 'Patients',
+                            textStyle: TextStyle(
+                              fontSize: 8.sp,
+                              color: const Color(0xFF525257),
+                              fontWeight: FontWeight.w600
+                            )
+                          ),
+                        ),
+
                       ),
                     ],
-
-                  primaryYAxis: NumericAxis(
-                    minimum: 0,
-                    maximum: 300,
-                  ),
-                  primaryXAxis: CategoryAxis(
-                      labelPlacement: LabelPlacement.betweenTicks
-                  ),
-
-                )
+                  )
+              ),
             )
           ],
         ),
