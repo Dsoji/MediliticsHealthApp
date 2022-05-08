@@ -24,7 +24,7 @@ class _BasicProfileScreenState extends State<BasicProfileScreen> {
         body: Column(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TitleBar(text: 'Basic profile',width: 108.w,addDivider: false,onTap: (){
+            TitleBar(text: 'Basic profile',width: 118.w,addDivider: false,onTap: (){
               Navigator.pop(context);
             },),
             Expanded(

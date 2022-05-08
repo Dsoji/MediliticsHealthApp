@@ -4,7 +4,6 @@ import 'package:medilitics/screens/view_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/re_used_buttons.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

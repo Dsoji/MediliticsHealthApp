@@ -29,7 +29,7 @@ class _ProfessionalDetailsScreen1State
               TitleBar(text: 'Professional details',onTap: (){
                 Navigator.pop(context);
               },addDivider: true,divider: SizedBox(
-                width: 187.5.w,
+                width: 185.w,
                 child: Divider(
                   height: 3.h,
                   color: const Color(0xFF0B7CB9),

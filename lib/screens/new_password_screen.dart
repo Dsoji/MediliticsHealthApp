@@ -30,7 +30,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   TitleBar(
                     text: 'Create new password',
                     addDivider: false,
-                    width:190.w,
+                    width:204.w,
                     onTap: (){
                       Navigator.pop(context);
                     },

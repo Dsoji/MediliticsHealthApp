@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medilitics/screens/appScaffold.dart';
 import 'package:medilitics/screens/basic_profile_page.dart';
+import 'package:medilitics/screens/individual_patient_screen.dart';
 import 'package:medilitics/screens/login_page.dart';
 import 'package:medilitics/screens/new_password_screen.dart';
 import 'package:medilitics/screens/onboardingPage.dart';
@@ -13,6 +15,7 @@ import 'package:medilitics/screens/verified_page.dart';
 import 'package:medilitics/screens/view_page.dart';
 import 'package:medilitics/screens/welcome_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:medilitics/screens/improvedPatientsScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,6 +55,9 @@ class MyApp extends StatelessWidget {
           ScheduleScreen.id:(context)=> const ScheduleScreen(),
           VerifiedScreen.id:(context)=> const VerifiedScreen(),
           ReportScreen.id:(context)=> const ReportScreen(),
+          ImprovedPatientsScreen.id:(context)=> const ImprovedPatientsScreen(),
+          AppScaffold.id:(context)=> const AppScaffold(),
+          IndividualPatient.id:(context)=> const IndividualPatient(),
         },
         initialRoute: WelcomeScreen.id,//ReportScreen.id,
       ),

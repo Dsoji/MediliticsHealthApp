@@ -24,7 +24,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   TitleBar(
                     text: 'Reset password',
                     addDivider: false,
-                    width:140.w,
+                    width:150.w,
                     onTap: (){
                       Navigator.pop(context);
                     },

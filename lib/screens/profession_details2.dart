@@ -26,7 +26,7 @@ class ProfessionalDetailsScreen2 extends StatelessWidget {
                   color: const Color(0xFF0B7CB9),
                   thickness: 3.h,
                   //thickness: ,
-                ),width:171.w,),
+                ),width:185.w,),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 20.0.w,horizontal: 20.0.h),
                   child: Column(

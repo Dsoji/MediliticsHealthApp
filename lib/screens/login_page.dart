@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medilitics/screens/appScaffold.dart';
+import 'package:medilitics/screens/report_page.dart';
 import 'package:medilitics/screens/reset_password_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
@@ -33,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TitleBar(
                     text: 'Welcome back',
                     addDivider: false,
-                    width:128.w,
+                    width:141.w,
                     onTap: (){
                       Navigator.pop(context);
                     },
@@ -86,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: MediaQuery.of(context).size.width,
                 color: _emailVal!=''&&_passwordVal!=''?myActiveColor:const Color(0xFFFBD4D5),
                 onPressed: (){
-
+                  Navigator.pushNamed(context, AppScaffold.id);
                 },
               )
             ],

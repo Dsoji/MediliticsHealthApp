@@ -34,7 +34,7 @@ class TitleBar extends StatelessWidget {
                   ),
                   SizedBox(
                     width: (MediaQuery.of(context).size.width -
-                        width!)/2-35.w,
+                        width!)/2-32.w,
                   ),
                   Text(
                     text!,

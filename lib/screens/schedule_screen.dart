@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medilitics/screens/report_page.dart';
+import 'package:medilitics/screens/welcome_page.dart';
 import 'package:medilitics/utilities/constants.dart';
 import 'package:medilitics/utilities/medilitics_title_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -160,7 +160,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             Padding(
               padding: EdgeInsets.only(bottom: 32.h),
               child: RedButton(onPressed: (){
-                Navigator.pushNamed(context, ReportScreen.id);
+                Navigator.pushNamed(context, WelcomeScreen.id);
               },width: 335.w,text: 'Save schedule',color: myActiveColor,),
             ),
           ],
